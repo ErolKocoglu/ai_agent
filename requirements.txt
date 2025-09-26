@@ -1,0 +1,13 @@
+llama-index
+langchain
+langchain-google-genai
+langchain-community
+# Google Gemini SDK
+google-genai
+
+# Vector Store and Embeddings (Example using ChromaDB)
+llama-index-embeddings-huggingface 
+llama-index-llms-langchain
+
+# Utilities
+python-dotenv
