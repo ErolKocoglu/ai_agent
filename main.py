@@ -26,7 +26,7 @@ embedding_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
 
 Settings.embed_model = embedding_model
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",  # veya "gemini-1.5-flash"
+    model="gemini-2.5-flash",
     temperature=0
 )
 
@@ -60,11 +60,11 @@ query_engine = index.as_query_engine()
 # 3️⃣ Tool-1: Document Search (Query Engine)
 # ------------------------------
 def search_docs(query: str) -> str:
-    """Gemini LLM + Gemini Embedding ile doküman araması"""
+    """Gemini LLM + Gemini Embedding document search"""
     response = query_engine.query(query)
     answer = str(response)
 
-    # kaynak dosyaları ekleyelim
+    
     sources = []
     for node in response.source_nodes:
         fname = node.node.metadata.get("file_name", "unknown")
@@ -83,7 +83,7 @@ doc_tool = Tool(
 
 
 # ------------------------------
-# 4️⃣ Tool-2: API Call (Support Tickets)
+# 4️⃣ Tool-2: API Call 
 # ------------------------------
 def get_joke(_: str) -> str:
     """Returns a random joke from an API"""
