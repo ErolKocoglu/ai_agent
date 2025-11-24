@@ -2,12 +2,14 @@ llama-index
 langchain
 langchain-google-genai
 langchain-community
-# Google Gemini SDK
 google-genai
-
-# Vector Store and Embeddings (Example using ChromaDB)
-llama-index-embeddings-huggingface 
+llama-index-embeddings-huggingface
 llama-index-llms-langchain
-
-# Utilities
 python-dotenv
+
+# Dev Dependencies
+pytest
+black
+isort
+flake8
+mypy
