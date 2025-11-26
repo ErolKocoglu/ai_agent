@@ -16,10 +16,24 @@ def build_agent():
 
     web_search_tool = DuckDuckGoSearchRun()
 
+    # Initialize new tools
+    from src.tools.math_tool import get_math_tool
+    from src.tools.time_tool import time_tool
+    from src.tools.wikipedia_tool import get_wikipedia_tool
+    from src.tools.python_repl_tool import get_python_repl_tool
+    from src.tools.file_tool import get_file_tools
+
+    math_tool = get_math_tool(llm)
+    wikipedia_tool = get_wikipedia_tool()
+    python_repl_tool = get_python_repl_tool()
+    file_tools = get_file_tools()
+
+    all_tools = [doc_tool, joke_tool, web_search_tool, math_tool, time_tool, wikipedia_tool, python_repl_tool] + file_tools
+
     agent = initialize_agent(
-        tools=[doc_tool, joke_tool, web_search_tool],
+        tools=all_tools,
         llm=llm,
-        agent="zero-shot-react-description",
+        agent="structured-chat-zero-shot-react-description",
         verbose=True,
         handle_parsing_errors=True
     )

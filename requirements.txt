@@ -6,6 +6,9 @@ google-genai
 llama-index-embeddings-huggingface
 llama-index-llms-langchain
 python-dotenv
+wikipedia
+langchain-experimental
+numexpr
 
 # Dev Dependencies
 pytest
