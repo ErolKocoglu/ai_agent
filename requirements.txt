@@ -9,6 +9,8 @@ python-dotenv
 wikipedia
 langchain-experimental
 numexpr
+streamlit
+watchdog
 
 # Dev Dependencies
 pytest

@@ -21,28 +21,28 @@ Settings.llm = llm
 
 def build_or_load_index():
     if Path(INDEX_DIR).exists() and any(Path(INDEX_DIR).glob("*.json")):
-        print("✅ Loading existing index...")
+        print("Loading existing index...")
         storage_context = StorageContext.from_defaults(persist_dir=INDEX_DIR)
         return load_index_from_storage(storage_context)
 
-    print("⚡ No index found, creating a new one...")
+    print("No index found, creating a new one...")
     # Check if docs directory exists
     if not Path(DOCS_DIR).exists():
-        print(f"⚠️ Docs directory not found at {DOCS_DIR}. Creating it.")
+        print(f"Docs directory not found at {DOCS_DIR}. Creating it.")
         Path(DOCS_DIR).mkdir(parents=True, exist_ok=True)
-        return None # Or handle empty index gracefully
+        return None 
 
     documents = SimpleDirectoryReader(DOCS_DIR).load_data()
     
     if not documents:
-        print("⚠️ No documents found in docs directory.")
+        print("No documents found in docs directory.")
         return None
 
     index = VectorStoreIndex.from_documents(
         documents, embed_model=embedding_model
     )
     index.storage_context.persist(persist_dir=INDEX_DIR)
-    print("💾 Index created and saved.")
+    print("Index created and saved.")
     return index
 
 # Global index instance (lazy loading might be better but keeping simple for now)
