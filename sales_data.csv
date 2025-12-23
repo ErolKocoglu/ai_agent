@@ -1,0 +1,9 @@
+Date,Product,Category,Units_Sold,Unit_Price,Region
+2023-01-15,Alpha-Laptop,Electronics,5,1200,North
+2023-01-16,Ergo-Chair,Furniture,12,250,West
+2023-02-10,Alpha-Laptop,Electronics,3,1200,East
+2023-02-12,Blue-Desk,Furniture,7,450,North
+2023-03-05,USB-C-Cable,Electronics,50,25,South
+2023-03-07,Ergo-Chair,Furniture,10,250,North
+2023-04-01,Alpha-Laptop,Electronics,8,1150,West
+2023-04-15,Blue-Desk,Furniture,4,450,South

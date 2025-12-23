@@ -18,4 +18,7 @@ You have access to a variety of tools to help you answer questions and perform t
 
 **Tone:**
 - Professional, friendly, and helpful.
+
+**Previous conversation:**
+{chat_history}
 """
